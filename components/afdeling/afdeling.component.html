@@ -1,0 +1,287 @@
+<!-- Toaster  -->
+<div class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive"
+  aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body">
+      {{error}}
+    </div>
+    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+      aria-label="Close"></button>
+  </div>
+</div>
+<!-- Toaster  End-->
+
+<!-- Logo And Energie Score Text in Small devices  -->
+<div class="mainLogoAndEnergieScoresText hiddenOnLg text-center mt-2">
+  <div class="mainLogo mb-2">
+    <img src="../../../assets/onboarding/onboardingLogo.png" class="mt-3" />
+  </div>
+  <div class="energiescoresTop mb-2">
+    Energiescores
+  </div>
+</div>
+
+<!-- Start Of total content div  -->
+<div class="mainSidebarAndDashboard">
+  <div class="mainLogoAndListItems">
+    <!-- Logo And Energie Score Text in Large devices  -->
+    <div class="mainLogoAndEnergieScoresText hiddenOnSm">
+      <div class="mainLogo">
+        <img src="../../../assets/onboarding/onboardingLogo.png" class="ml-2 mt-3 energiescoresImage" />
+      </div>
+      <div class="energiescores">
+        Energiescores
+      </div>
+    </div>
+
+    <!-- Sidebar  -->
+    <div>
+      <div class="listItemsMainDiv">
+        <div class="imgAndText mb-3">
+          <div>
+            <img class="me-2" src="../../../assets/scores/scoresIcon.png" />
+          </div>
+          <div>
+            Scores
+          </div>
+        </div>
+
+        <div class="imgAndText mb-3">
+          <div>
+            <img class="me-2" src="../../../assets/scores/analysisIcon.png" />
+          </div>
+          <div>
+            Analyse
+          </div>
+        </div>
+
+        <div class="imgAndText mb-3">
+          <div>
+            <img class="me-2" src="../../../assets/scores/tipsIcon.png" />
+          </div>
+          <div>
+            Tips
+          </div>
+        </div>
+
+        <div class="imgAndText mb-3">
+          <div>
+            <img class="me-2" src="../../../assets/scores/planIcon.png" />
+          </div>
+          <div>
+            Plan
+          </div>
+        </div>
+
+
+        <div class="imgAndText mb-3">
+          <div>
+            <img class="me-2" src="../../../assets/scores/instelllingen.png" />
+          </div>
+          <div>
+            Instellinge
+          </div>
+        </div>
+
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Sidebar Start  -->
+  <div class="rightSideBar">
+    <!-- Dashboard Text  -->
+    <div class="dashboard  py-3 d-block d-sm-none d-none d-sm-block d-none d-md-block">
+      Dashboard
+    </div>
+
+    <!-- Nav Tabs  -->
+    <nav class="shadow-sm p-1 mb-auto bg-body rounded">
+
+
+      <div class= "nav nav-pills nav-justified nav nav-tabs " id="nav-tab" role="tablist">
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page"  [routerLink]="['/energiesscores']">Persoonlijk</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link bg-white"  [routerLink]="['/afdeling']">Afdeling</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+      <!-- <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <button class="nav-link  persoonlijkeTab" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home"
+          type="button" role="tab" aria-controls="nav-home" aria-selected="true"
+          [routerLink]="['/energiesscores']">Persoonlijk</button>
+        <button class="nav-link afdelingTab active" id="nav-profile-tab" data-bs-toggle="tab"
+          data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"
+          [routerLink]="['/afdeling']">Afdeling</button> -->
+
+
+
+
+    <!-- navnav -->
+
+
+
+
+
+
+
+    <!-- Content in nav tabs  -->
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+        <!-- Cards And Graph  -->
+        <div class="cardsAndGraph">
+          <div class="row mt-3">
+            <!-- Cards First Column  -->
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
+              <div class="card cards cardMaandscore" (click)= "resetDepartmentChart()">
+                <!-- First Card Body  -->
+                <div class="card-body">
+                  <div class="maandscore">
+                    <div>
+                      <div class="row">
+                        <div class="col-2 maandRadio">
+                          <div>
+                            <input type="radio" id="html" name="fav_language" value="HTML" checked class="stretched-link">
+                          </div>
+                        </div>
+                        <div class="col-10">
+                          <label for="html">
+                            <div class="maandscoreText">
+                              Maandscore
+                            </div>
+                            <div class="maandscorePara">
+                              Op basis van jouw laatste meting
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="maandscoreNumber" [style.background]="maandTextColor" [style.color]="maandCTextColor">
+                      {{departmentScoreValues[11]}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cards Second Column  -->
+            <div
+              class="col-sm-12 col-md-6 col-lg-6 col-xl-6  order-3 order-sm-3 order-md-2 order-lg-2 order-xl-2 order-xxl-2">
+              <div class="card cards cardTrend" (click)= "addTrendToDepartmentChart()">
+                <!-- Second Card Body  -->
+                <div class="card-body">
+                  <div class="trendScore">
+                    <div>
+                      <div class="row">
+                        <div class="col-2 maandRadio">
+                          <div>
+                            <input type="radio" id="css" name="fav_language" value="CSS" class="stretched-link">
+                          </div>
+                        </div>
+                        <div class="col-10">
+                          <div class="trendScoreText">
+                            Trend
+                          </div>
+                          <div class="trendScorePara">
+                            Op basis van jouw laatste meting
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="trendScoreNumber" [style.background]="trendTextColor" [style.color]="trendCTextColor">
+                      -2
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cards Third Column  -->
+            <div
+              class="col-sm-12 col-md-6 col-lg-6 col-xl-6 cardsCol order-2 order-sm-2 order-md-3 order-lg-3 order-xl-3 order-xxl-3">
+              <div class="card cards cardGemiddelde" (click)= "addAverageToDepartmentChart()">
+                <!-- Third Card Body  -->
+                <div class="card-body">
+                  <div class="gemiddeldeScore">
+                    <div>
+                      <div class="row">
+                        <div class="col-2 maandRadio">
+                          <div>
+                            <input type="radio" id="javascript" name="fav_language" value="JavaScript" class="stretched-link">
+                          </div>
+                        </div>
+                        <div class="col-10">
+                          <label for="javascript">
+                            <div class="gemiddeldeScoreText">
+                              Gemiddelde
+                            </div>
+                            <div class="gemiddeldeScorePara">
+                              Op basis van jouw laatste meting
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="gemiddeldeScoreNumber" [style.background]="averageTextColor"  [style.color]="averageCTextColor">
+                      {{departmentAverageScore}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cards Fourth Column  -->
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 cardsCol order-4 order-sm-4">
+              <div class="card cards cardBranche">
+                <!-- Fourth Card Body  -->
+                <div class="card-body">
+                  <div class="brancheScore">
+                    <div>
+                      <div class="row">
+                        <div class="col-2 maandRadio">
+                          <div>
+                            <input type="radio" id="bootstrap" name="fav_language" value="BOOTSTRAP"
+                              class="stretched-link">
+                          </div>
+                        </div>
+                        <div class="col-10">
+                          <label for="bootstrap">
+                            <div class="brancheScoreText">
+                              Branche gemiddelde
+                            </div>
+                            <div class="brancheScorePara">
+                              Op basis van jouw laatste meting
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="brancheNumber">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Canvas  -->
+          <div>
+            <!-- <div class="chartCanvas" style="display: block;width:100%">
+                <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions">
+                </canvas>
+              </div> -->
+            <div class="chart-container">
+              <canvas id="MyChart">{{ chart }}</canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

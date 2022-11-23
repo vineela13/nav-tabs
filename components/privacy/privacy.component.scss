@@ -1,0 +1,192 @@
+@import "../../../styles.scss";
+
+// from 0
+@include media-breakpoint-up(xs) {
+  .footer {
+    padding: 20px 0px;
+  }
+
+  .dot {
+    margin-right: 10px;
+  }
+
+  .verder {
+    margin-right: 3%;
+  }
+
+  .dots {
+    margin-left: 3%;
+  }
+
+  .dotsAndButton {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+  }
+
+  .body {
+    background-color: #f5f7fa;
+    height: 100vh;
+
+    .alignHeight {
+      height: auto;
+      background-color: #f5f7fa;
+    }
+
+    .header {
+      text-align: center;
+      padding-top: 33.33px;
+      padding-bottom: 30px;
+    }
+
+    .contentWithoutFooter {
+      padding: 0% 3%;
+    }
+
+    .doel {
+      margin-bottom: 14px;
+      font-weight: 600;
+      font-size: 23px;
+      line-height: 24px;
+      color: #52606d;
+    }
+
+    .doelPara {
+      margin-bottom: 39px;
+      font-family: "OpenSans";
+      font-size: 14px;
+      line-height: 202.7%;
+      color: #7b8794;
+    }
+
+    .dots {
+      margin-right: 16px;
+    }
+
+    .footerImageAndButton {
+      position: fixed;
+      bottom: 0;
+      background-color: rgb(255, 255, 255);
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding-left: 10%;
+      height: 100px;
+      align-items: center;
+    }
+
+    .verderButton {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    .buttonD {
+      padding-right: 5%;
+    }
+
+    .verderButtonP {
+      padding: 10px 100px;
+    }
+  }
+}
+
+// from 768
+@include media-breakpoint-up(md) {
+  .footer {
+    padding: 0px 0px;
+    display: flex;
+
+  }
+
+  .footerLeftSide {
+    background-color: #F5F7FA;
+    width: 25%;
+  }
+
+  .footerCenter {
+    width: 50%;
+  }
+
+  .footerRightSide {
+    background-color: #F5F7FA;
+    width: 25%;
+  }
+
+  .dotsAndButton {
+    background-color: #f5f7fa !important;
+  }
+
+  .body {
+    height: 100vh;
+
+    .alignHeight {
+      height: auto;
+      background-color: #f5f7fa;
+    }
+
+    .header {
+      text-align: start;
+      padding: 2% 0% 0% 3%;
+    }
+
+    .contentAfterHeader {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      .leftSideSpace {
+        width: 25%;
+      }
+
+      .centerContent {
+        width: 50%;
+      }
+
+      .doel {
+        font-weight: 600;
+        font-size: 37px;
+        line-height: 56px;
+        color: #3e4c59;
+      }
+
+      .doelPara {
+        font-family: "Prompt";
+        font-weight: 300;
+        font-size: 17px;
+        line-height: 202.7%;
+        color: #3e4c59;
+      }
+
+      .dotImagesAndVerder {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 130px;
+      }
+
+      .dots {
+        margin-right: 16px;
+      }
+
+      .rightSideSpace {
+        width: 25%;
+      }
+
+      .dotImages {
+        position: relative !important;
+      }
+
+      .footerImageAndButton {
+        position: relative !important;
+        display: flex;
+        justify-content: space-between;
+        background-color: #f5f7fa;
+        margin-bottom: 115px;
+      }
+
+      .verderButton {
+        margin-right: 20px;
+      }
+    }
+  }
+}

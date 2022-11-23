@@ -1,0 +1,504 @@
+@import "../../../styles.scss";
+
+// from 0
+@include media-breakpoint-up(xs) {
+  .listItemsMainDiv {
+    display: flex;
+    justify-content: space-around;
+    border-radius:50px 50px 0px 0px;
+    // text-align : center;
+    // align-items : center;
+  }
+  // .active{
+  //   margin-bottom: 14px;
+  //   border-radius: 8px;
+  // }
+
+  .nav-link{
+  background: #F5F7FA;
+
+  }
+
+  .nav{
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .tab-content{
+    border-radius: 8px;
+border: #00924a;
+  }
+
+  // }
+   // .cards{
+  //   margin:0px 5%;
+  //   margin-bottom : 20px;
+  // }
+//change
+  .cardMaandscore {
+    margin: 0px 5%;
+    margin-bottom: 20px;
+
+    cursor:pointer;
+  }
+
+  .cardTrend {
+    margin: 0px 5%;
+    margin-bottom: 20px;
+
+    cursor:pointer;
+
+  }
+
+  .cardGemiddelde {
+    margin: 0px 5%;
+
+    cursor:pointer;
+
+  }
+
+  .cardBranche {
+    margin: 0px 5%;
+    margin-bottom: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor:pointer;
+
+  }
+
+  .chartCanvas{
+    width :100% !important;
+  }
+
+  .apiOutside {
+    position: absolute;
+    left: 48.5%;
+    top: 44%;
+    font-weight: 600;
+    font-size: 64px;
+    color: #9aa5b1;
+  }
+  .apiOutsideConfirm{
+    position: absolute;
+    left: 48.5%;
+    top: 45%;
+    font-weight: 600;
+    font-size: 64px;
+    color: #9aa5b1;
+  }
+
+  .apiValue {
+    text-align: center;
+    padding: 15px 50px;
+    width: 10px;
+    background-color: #e4e7eb;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 64px;
+    color: #00924a;;
+  }
+  .rangeDiv {
+    // text-align : center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .rangeAndApiDiv {
+    text-align: center;
+  }
+  .vulButton {
+    background: linear-gradient(#9198e5);
+  }
+  .modalBodyStartingModal {
+    padding: 10% 10%;
+  }
+
+  .flyingIcon {
+    text-align: center;
+  }
+
+  .vul {
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 30px;
+    text-align: center;
+    color: #52606d;
+    margin-top: 24px;
+  }
+
+  .vulPara {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 175%;
+    text-align: center;
+    color: #a2abb4;
+    margin-top: 24px;
+  }
+
+  .jePara {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 175%;
+    text-align: center;
+    color: #7c8895;
+    margin-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .canvasDiv {
+    width: 100%;
+    margin-left: -30px !important;
+  }
+
+  .maandRadio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hiddenOnSm {
+    display: none;
+  }
+
+  .hiddenOnLg {
+    display: inline;
+  }
+
+  .scoreLists {
+    color: #000;
+    margin-right: 50px;
+    text-align: center;
+    list-style-type: none;
+  }
+
+  .maandscore {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .maandscoreText {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: #3e4c59;
+  }
+
+  .trendScoreText {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: #3e4c59;
+  }
+  .gemiddeldeScoreText {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: #3e4c59;
+  }
+
+  .brancheScoreText {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    color: #3e4c59;
+  }
+
+  .maandscorePara,
+  .trendScorePara,
+  .gemiddeldeScorePara,
+  .brancheScorePara {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    /* identical to box height, or 138% */
+
+    color: #7b8794;
+  }
+
+  .maandscoreNumber {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 24px;
+    color: #00924a;
+    background-color: #ddf1e5;
+    border-radius: 5px;
+    padding: 2% 4%;
+  }
+
+  .trendScore {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .trendScoreNumber {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 24px;
+    color: #9aa5b1;
+    padding: 2% 2%;
+  }
+
+  .gemiddeldeScoreNumber {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 24px;
+    color: #9aa5b1;
+    padding: 2% 2%;
+  }
+
+  .brancheNumber {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 24px;
+    color: #9aa5b1;
+    padding: 2% 2%;
+  }
+
+  .gemiddeldeScore {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .brancheScore {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .graph {
+    width: 100%;
+  }
+
+  .mainSidebarAndDashboard {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .scoresLiItems {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+  }
+
+  .energiescores {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 30px;
+    color: #52606d;
+  }
+
+  .cardsAndGraph {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    // padding : 3%;
+  }
+
+  .cardsCol {
+    margin-bottom: 20px;
+  }
+
+  .scoresFooter {
+    text-align: left;
+    position: scroll;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+  }
+
+  .modalHeader {
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 30px;
+    text-align: center;
+    color: #52606d;
+  }
+
+  .modalMaak {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    color: #78818b;
+  }
+
+  .rangeNumberDiv {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .rangeNumber {
+    background-color: #e4e7eb;
+    padding: 2%;
+  }
+
+  .rangeDiv {
+    text-align: center;
+  }
+}
+
+// from 576
+@include media-breakpoint-up(sm) {
+}
+
+// from 768
+@include media-breakpoint-up(md) {
+  .scoresFooter {
+    box-shadow: none;
+  }
+  .listItemsMainDiv{
+    display : flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: left;
+    margin-left:20px;
+    box-shadow:none;
+  }
+  .imgAndText{
+    display:flex;
+    justify-content: start;
+  }
+  .afdelingTab {
+    background-color: #f4f6f9;
+    color: #616e7c;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 26px;
+    text-align: center;
+  }
+
+  .persoonlijkeTab {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 26px;
+    text-align: center;
+    color: #4279de !important;
+  }
+
+  .mainLogo {
+    padding-left: 15%;
+  }
+
+  .energiescoresImage {
+    margin-left: 20%;
+  }
+
+  .energiescores {
+    margin-top: 10px;
+    margin-bottom: 35px;
+    padding-left: 17%;
+  }
+
+  .hiddenOnSm {
+    display: inline;
+  }
+
+  .hiddenOnLg {
+    display: none;
+  }
+
+  .scoreLists {
+    color: #7b8794;
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+  }
+  .mainSidebarAndDashboard {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .scoresLiItems {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #7b8794;
+    padding: 2% 2% 25% 20%;
+  }
+
+  .mainLogoAndEnergieScoresText {
+    text-align: center;
+    // padding: 2% 2% 2% 2%;
+  }
+
+  .mainLogoAndListItems {
+    background-color: #f5f7fa;
+    max-height: fit-content;
+    height: 1200px !important;
+    padding: 2% 5% 25% 2%;
+  }
+
+  .dashboard {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 27px;
+    line-height: 30px;
+    color: #52606d;
+  }
+
+  .rightSideBar {
+    width: 100%;
+    padding: 2%;
+  }
+  .cardsAndGraph {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .modalBody {
+    padding-top: 10%;
+    padding-bottom: 0;
+    padding-right: 20%;
+    padding-left: 20%;
+  }
+
+  .scoreLists {
+    margin-bottom: 20px !important;
+  }
+}
+
+// frm 992
+@include media-breakpoint-up(lg) {
+  .hiddenOnSm {
+    display: inline;
+  }
+
+  .hiddenOnLg {
+    display: none;
+  }
+}
+
+// from 1200
+@include media-breakpoint-up(xl) {
+}
+
+// from 1400
+@include media-breakpoint-up(xxl) {
+}
+
+@media screen and (min-height: 800px) {
+}

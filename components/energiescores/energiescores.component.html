@@ -1,0 +1,428 @@
+<div style="overflow: hidden;">
+  <button #loginButton type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal"
+    hidden>Hidden</button>
+
+  <!--starting Modal -->
+  <div class="modal " id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-body modalBodyStartingModal">
+          <div class="flyingIcon">
+            <img src="../../../assets/scores/flyingIcon.png" />
+          </div>
+          <div class="vul">
+            Vul je energiescore in
+          </div>
+          <div class="vulPara">
+            Vul je energiescore van de afgelopen maand
+            in om je overzicht actueel te houden.
+          </div>
+          <div class="jePara">
+            Je kan de score invullen tot het einde van
+            de tweede week van de nieuwe maand.
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-primary vulButton" type="button" data-bs-toggle="modal"
+              data-bs-target="#highScoreModal">Vul energiescore in</button>
+            <button class="btn btn-light nietButton" type="button" data-bs-dismiss="modal" aria-label="Close">Niet
+              nu</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- High Score  Modal-->
+  <div class="modal  " aria-hidden="true" id="highScoreModal" tabindex="-1" aria-labelledby="highScoreModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body modalBody">
+          <div class="modalHeader">
+            Wat was je gemiddelde energiescore over februari?
+          </div>
+          <div class="modalMaak">
+            Maak geen onderscheid in werk of prive, lichamelijk of geestelijk: gewoon een cijfer voor je gemiddelde
+            energie over de afgelopen maan.
+          </div>
+          <br />
+
+          <div class="rangeAndApiDiv">
+            <div class="rangeDiv" [style.backgroundColor]="setRangeColor(apiValue) " >
+              <div [style.Color]="numberRangeColor(apiValue) " >
+                {{apiValue}}
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="rangeInput" >
+            <!-- <input type="range" min="0" max="9" value="1" class="slider " (input)="valueChanged($event)" [(ngModel)]="apiValue"/> -->
+            <input type="range" min="0" max="9" class="slider" (input)="valueChanged($event)" [(ngModel)]="apiValue" [style.backgroundColor]="setRangeColor(apiValue) " >
+          </div>
+
+          <div class="modalMaak mb-4">
+            Deze score wordt anoniem gebruikt om de gemiddelde energie van jouw afdeling te berekenen
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#confirmModal"
+              type="button">Bevestig energiescore</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confirmed  Modal-->
+  <div class="modal  " id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body ">
+          <div>
+            <div class="modal-body modalBody">
+              <div class="modalHeader">
+                Klopt deze score voor februari?
+              </div>
+              <br />
+
+              <div class="rangeAndApiDiv">
+                <div class="rangeDiv">
+                  <div>
+                    {{apiValue}}
+                  </div>
+                </div>
+              </div>
+              <br />
+
+              <div class="modalMaak mb-4">
+                De meting voor deze maand kan later niet meer worden gewijzigd.
+              </div>
+              <div class="d-grid gap-2">
+                <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#sharedModal"
+                  type="button">Bevestig </button>
+              </div>
+              <div class="d-grid gap-2">
+                <button class="btn btn-light btn-lg" data-bs-toggle="modal" data-bs-target="#sharedModal"
+                  type="button">Annuleer </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared  Modal-->
+  <div class="modal " id="sharedModal" tabindex="-1" aria-labelledby="sharedModalLabel" aria-hidden="true">
+    <div class="modal-dialog ">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body ">
+          <div class="text-center mb-4">
+            <img src="../../../assets/scores/icGraph.png" />
+          </div>
+          <div>
+            <div class="modalHeader">
+              Energiescore bevestigd
+            </div>
+            <br />
+            <div class="modalMaak mb-4">
+              je score is nu te zien bij jouw persoonlijke energiescores. Bij voldoende respons wordt je energiescore
+              ook anoniem meegenomen in de gemiddelde energiescore van je afdeling.
+            </div>
+            <div class="d-grid gap-2">
+              <button class="btn btn-primary btn-lg" data-bs-toggle="modal" type="button" (click)="addEnergyScore()">ok
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toaster  -->
+  <div class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive"
+    aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        {{error}}
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+        aria-label="Close"></button>
+    </div>
+  </div>
+  <!-- Toaster  End-->
+
+  <!-- Logo And Energie Score Text in Small devices  -->
+  <div class="mainLogoAndEnergieScoresText hiddenOnLg text-center mt-2 " >
+    <div class="mainLogo mb-2">
+      <img src="../../../assets/onboarding/onboardingLogo.png" class="mt-3" />
+    </div>
+    <div class="energiescoresTop mb-2">
+      Energiescores
+    </div>
+  </div>
+
+  <!-- Start Of total content div  -->
+  <div class="mainSidebarAndDashboard ">
+    <div class="mainLogoAndListItems">
+      <!-- Logo And Energie Score Text in Large devices  -->
+      <div class="mainLogoAndEnergieScoresText hiddenOnSm">
+        <div class="mainLogo">
+          <img src="../../../assets/onboarding/onboardingLogo.png" class="ml-2 mt-3 energiescoresImage" />
+        </div>
+        <div class="energiescores">
+          Energiescores
+        </div>
+      </div>
+
+      <!-- Sidebar  -->
+      <div>
+        <div class="listItemsMainDiv">
+          <div class="imgAndText mb-3">
+            <div>
+              <img class="me-2" src="../../../assets/scores/scoresIcon.png" />
+            </div>
+            <div>
+              Scores
+            </div>
+          </div>
+
+          <div class="imgAndText mb-3">
+            <div>
+              <img class="me-2" src="../../../assets/scores/analysisIcon.png" />
+            </div>
+            <div>
+              Analyse
+            </div>
+          </div>
+
+          <div class="imgAndText mb-3">
+            <div>
+              <img class="me-2" src="../../../assets/scores/tipsIcon.png" />
+            </div>
+            <div>
+              Tips
+            </div>
+          </div>
+
+          <div class="imgAndText mb-3">
+            <div>
+              <img class="me-2" src="../../../assets/scores/planIcon.png" />
+            </div>
+            <div>
+              Plan
+            </div>
+          </div>
+
+
+          <div class="imgAndText mb-3">
+            <div>
+              <img class="me-2" src="../../../assets/scores/instelllingen.png" />
+            </div>
+            <div>
+              Instellinge
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Sidebar Start  -->
+    <div class="rightSideBar">
+      <!-- Dashboard Text  -->
+      <div class="dashboard  py-3 d-block d-sm-none d-none d-sm-block d-none d-md-block">
+        Dashboard
+      </div>
+
+      <!-- Nav Tabs  -->
+      <nav class="shadow-sm p-3 mb-5 bg-body rounded">
+        <div class= "nav nav-pills justify-content-center d-flex nav-tabs " id="nav-tab" role="tablist">
+          <ul class="nav nav-pills ">
+            <li class="nav-item">
+              <a class="nav-link bg-white" aria-current="page"  [routerLink]="['/energiesscores']">Persoonlijk</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link"  [routerLink]="['/afdeling']">Afdeling</a>
+            </li>
+          </ul>
+          <span class="navLargeScreen">
+<span class="d-sm-none d-md-none d-lg-none">
+  <button class="nav-link active persoonlijkeTab" id="nav-home-tab" data-bs-toggle="tab"
+  data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"
+  [routerLink]="['/energiesscores']">Persoonlijk</button>
+<button class="nav-link afdelingTab" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+  type="button" role="tab" aria-controls="nav-profile" aria-selected="false"
+  routerLink='/afdeling'>Afdeling</button>
+</span>
+</span>
+        </div>
+      </nav>
+
+      <form action="/action_page.php">
+        <!-- Content in nav tabs  -->
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active " id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <!-- Cards And Graph  -->
+            <div class="cardsAndGraph">
+              <div class="row">
+                <!-- Cards First Column  -->
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 ">
+                  <div class="card cards mt-2" (click)="resetChart()" value="HTML">
+                    <!-- First Card Body  -->
+                    <div class="card-body ">
+                      <div class="maandscore">
+                        <div>
+                          <div class="row">
+                            <div class="col-2 maandRadio">
+                              <div>
+                                <input type="radio" id="html" name="fav_language" value="HTML" checked class="stretched-link" >
+                              </div>
+                            </div>
+                            <div class="col-10">
+                              <label for="html">
+                                <div class="maandscoreText">
+                                  Maandscore
+                                </div>
+                                <div class="maandscorePara">
+                                  Op basis van jouw laatste meting
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="maandscoreNumber"  [style.background]="maandTextColor" [style.color]="maandCTextColor">
+                          {{energyScoreValues[11]}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Cards Second Column  -->
+                <div
+                  class="col-sm-12 col-md-6 col-lg-6 col-xl-6  order-3 order-sm-3 order-md-2 order-lg-2 order-xl-2 order-xxl-2">
+                  <div class="card cards mt-2" (click)="addTrendToChart()">
+                    <!-- Second Card Body  -->
+                    <div class="card-body ">
+                      <div class="trendScore">
+                        <div>
+                          <div class="row">
+                            <div class="col-2 maandRadio">
+                              <div>
+                                <input type="radio" id="css" name="fav_language" value="CSS" class="stretched-link">
+                              </div>
+                            </div>
+                            <div class="col-10">
+                              <label for="css">
+                                <div class="trendScoreText">
+                                  Trend
+                                </div>
+                                <div class="trendScorePara">
+                                  Op basis van jouw laatste meting
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="trendScoreNumber" [style.background]="trendTextColor" [style.color]="trendCTextColor">
+                          {{userTrendScore}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Cards Third Column  -->
+                <div
+                  class="col-sm-12 col-md-6 col-lg-6 col-xl-6 cardsCol order-2 order-sm-2 order-md-3 order-lg-3 order-xl-3 order-xxl-3">
+                  <div class="card cards mt-2" (click)="addAverageToChart()">
+                    <!-- Third Card Body  -->
+                    <div class="card-body ">
+                      <div class="gemiddeldeScore">
+                        <div>
+                          <div class="row">
+                            <div class="col-2 maandRadio">
+                              <div>
+                                <input type="radio" id="javascript" name="fav_language" value="JavaScript" class="stretched-link">
+                              </div>
+                            </div>
+                            <div class="col-10">
+                              <label for="javascript">
+                                <div class="gemiddeldeScoreText">
+                                  Gemiddelde
+                                </div>
+                                <div class="gemiddeldeScorePara">
+                                  Op basis van jouw laatste meting
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="gemiddeldeScoreNumber" [style.background]="averageTextColor"  [style.color]="averageCTextColor">
+                          {{UserEnergyAverageScore}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- {{UserEnergyAverageScore}} -->
+                <!-- Cards Fourth Column  -->
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 cardsCol order-4 order-sm-4">
+                  <div class="card cards mt-2 mb-4">
+                    <!-- Fourth Card Body  -->
+                    <div class="card-body">
+                      <div class="brancheScore">
+                        <div>
+                          <div class="row">
+                            <div class="col-2 maandRadio">
+                              <div>
+                                <input type="radio" id="bootstrap" name="fav_language" value="BOOTSTRAP"
+                                  class="stretched-link">
+                              </div>
+                            </div>
+                            <div class="col-10">
+                              <label for="bootstrap">
+                                <div class="brancheScoreText">
+                                  Branche gemiddelde
+                                </div>
+                                <div class="brancheScorePara">
+                                  Op basis van jouw laatste meting
+                                </div>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="brancheNumber">
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Canvas  -->
+              <div>
+                <div class="chart-container">
+                  <canvas id="MyChart">{{ chart }}</canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

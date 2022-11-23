@@ -1,0 +1,252 @@
+@import "../../styles.scss";
+
+// from 0
+@include media-breakpoint-up(xs) {
+  .footer {
+    padding: 20px 0px;
+  }
+
+  .dot {
+    margin-right: 10px;
+  }
+
+  .verder {
+    margin-right: 3%;
+  }
+
+  .dots {
+    margin-left: 3%;
+  }
+
+  .dotsAndButton {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+  }
+
+  .body {
+    background-color: #f5f7fa;
+    height: 100vh;
+
+    .alignHeight {
+      height: auto;
+      background-color: #f5f7fa;
+    }
+
+    .header {
+      text-align: center;
+      padding-top: 33.33px;
+      padding-bottom: 30px;
+    }
+
+
+    .doel {
+      margin-bottom: 14px;
+      font-weight: 600;
+      font-size: 23px;
+      line-height: 24px;
+      font-family: 'prompt';
+      color: #52606d;
+    }
+
+    .doelPara {
+      margin-bottom: 39px;
+      font-family: "prompt";
+      font-size: 14px;
+      line-height: 202.7%;
+      color: #7b8794;
+    }
+
+    .persoonlijkImage,
+    .afdelingImage {
+      margin-bottom: 10px;
+      margin-right: 18px;
+    }
+
+    .persoonlijk,
+    .afdeling {
+      margin-bottom: 12px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 18px;
+      color: #616e7c;
+    }
+
+    .persoonlijkPara,
+    .afdelingAndPara {
+      padding-bottom: 28px;
+      font-family: "prompt";
+      font-size: 14px;
+      line-height: 16px;
+      line-height: 202.7%;
+      color: #7b8794;
+    }
+
+    .dotImagesAndVerder {
+      background-color: #fff;
+      position: fixed;
+      bottom: 0;
+      margin-bottom: 130px;
+    }
+
+    .dots {
+      margin-right: 16px;
+    }
+
+    .dotImages {
+      position: fixed;
+      bottom: 0;
+    }
+
+    .verderButton {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      margin-right: 10%;
+    }
+
+    .verderButtonP {
+      padding: 10px 100px;
+    }
+  }
+
+}
+
+// @include media-breakpoint-up(sm) {
+// }
+
+
+// from 768
+@include media-breakpoint-up(md) {
+  .footerCenter{
+    width : 50%;
+  }
+  .footer{
+    padding:0px 0px;
+    display:flex;
+
+  }
+
+  .footerLeftSide {
+    background-color: #F5F7FA;
+    width: 25%;
+  }
+
+  .footerRightSide{
+    background-color: #F5F7FA;
+    width: 25%;
+  }
+
+  .dotsAndButton {
+    background-color: #f5f7fa !important;
+  }
+
+  .body {
+    height: 100vh;
+
+    .alignHeight {
+      height: auto;
+      background-color: #f5f7fa;
+    }
+
+    .header {
+      text-align: start;
+      padding: 2% 0% 0% 3%;
+    }
+
+    .contentAfterHeader {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      .leftSideSpace {
+        width: 25% !important;
+      }
+
+      .centerContent {
+        width: 50% !important;
+      }
+
+      .rightSideSpace {
+        width: 25% !important;
+      }
+
+      .doel {
+        font-weight: 600;
+        font-size: 37px;
+        line-height: 56px;
+        color: #3e4c59;
+      }
+
+      .doelPara {
+        font-family: "Prompt";
+        font-weight: 300;
+        font-size: 17px;
+        line-height: 202.7%;
+        color: #3e4c59;
+      }
+
+      .persoonlijk,
+      .afdeling {
+        font-weight: 600;
+        font-size: 27px;
+        line-height: 41px;
+        color: #3e4c59;
+      }
+
+      .persoonlijkPara,
+      .afdelingPara {
+        font-weight: 300;
+        font-size: 17px;
+        line-height: 202.7%;
+        color: #3e4c59;
+      }
+
+      .imagePersoonlijkAndPara,
+      .imageAfdelingAndPara {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .persoonlijkAndPara,
+      .afdelingAndPara {
+        flex-direction: column;
+      }
+
+      .dotImagesAndVerder {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 130px;
+      }
+
+      .dots {
+        margin-right: 16px;
+      }
+
+      .dotImagesAndVerder {
+        background-color: #f5f7fa;
+        position: relative !important;
+      }
+
+      .dotImages {
+        position: relative !important;
+      }
+
+      .verderButton {
+        position: relative !important;
+      }
+
+      .verderButtonP {
+        padding: 10px 100px;
+      }
+
+      .footerImageAndButton {
+        position: fixed;
+        // bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        background-color: #f5f7fa;
+      }
+    }
+  }
+}
